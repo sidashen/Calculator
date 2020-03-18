@@ -89,7 +89,7 @@ class App extends Component {
           value={this.state.result}
           name="result"
           readOnly
-          className="result input"></input>
+          className="result-number input"></input>
         <input
           value={this.state.firstNum}
           onChange={this.handleChange}

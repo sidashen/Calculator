@@ -9,8 +9,8 @@
   left: 50%;
   margin-left: -250px;
   top: 200px;
-  width: 360px;
-  height: 360px;
+  width: 330px;
+  height: 350px;
   background-color: #fff9f1;
   border-radius: 20%;
   border: 1px solid gray;
@@ -18,26 +18,82 @@
 
 .input {
   position: relative;
+  padding-right: 15px;
   height: 50px;
   border-radius: 30px;
   text-align: right;
+  font-size: 24px;
 }
 
-.result {
-  width: 277px;
-  margin: 42px;
+.result-number {
+  top: 10px;
+  width: 261px;
+  margin: 34px;
+  font-size: 28px;
 }
 
 .first-number {
   position: absolute;
-  right: 38px;
+  right: 32px;
   top: 124px;
   width: 110px;
 }
 
 .last-number {
   position: absolute;
-  right: 36px;
-  top: 206px;
+  right: 31px;
+  top: 195px;
   width: 110px;
+}
+
+.computation:hover { background-color: #f46f17 }
+
+.computation:active {
+  background-color: #f46f17;
+  box-shadow: 0 4px rgb(116, 112, 112);
+  transform: translateY(3px);
+}
+
+.computation {
+  position: relative;
+  padding: 3px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff8f44;
+  border: 1px solid gray;
+  border-radius: 50%;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.operator {
+  position: relative;
+  height: 50px;
+  width: 110px;
+  background-color: #0f8ccc;
+  color: white;
+  font-size: 22px;
+  border-radius: 30px;
+}
+
+.result {
+  position: absolute;
+  bottom: 34px;
+  right: 33px;
+}
+
+.clear {
+  position: absolute;
+  bottom: 34px;
+  left: 40px;
+}
+
+.container {
+  position: relative;
+  top: 6px;
+  left: 35px;
+  display: grid;
+  grid-template-columns: 70px 70px;
+  grid-template-rows: 70px 70px;
 }
