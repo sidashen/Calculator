@@ -89,19 +89,19 @@ class App extends Component {
           value={this.state.result}
           name="result"
           readOnly
-          className="result"></input>
+          className="result input"></input>
         <input
           value={this.state.firstNum}
           onChange={this.handleChange}
           name="firstNum"
           onClick={this.clear}
-          className="first-number"></input>
+          className="first-number input"></input>
         <input
           value={this.state.lastNum}
           onChange={this.handleChange}
           name="lastNum"
           onClick={this.clear}
-          className="last-number"></input>
+          className="last-number input"></input>
         <Calculation calculate={this.handleCompute} clearAll={this.clearAll} />
       </div>
     );

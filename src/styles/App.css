@@ -9,9 +9,25 @@
   left: 50%;
   margin-left: -250px;
   top: 200px;
-  width: 400px;
-  height: 500px;
+  width: 360px;
+  height: 400px;
   background-color: #fff9f1;
   border-radius: 20%;
   border: 1px solid gray;
+}
+
+.result {
+  position: relative;
+  left: 20px;
+  width: 246px;
+  height: 57px;
+  margin: 36px;
+  border-radius: 30px;
+  text-align: right;
+}
+
+.input {
+  height: 57px;
+  border-radius: 30px;
+  text-align: right;
 }
