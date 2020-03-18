@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
+import Calculation from './component/Calculation'
 
 class App extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends Component {
     this.setState({ [name]: target.value })
   }
 
-  parseCompute(e) {
+  parseCompute = (e) => {
     const { result, operator } = this.state;
     const compute = e.target.name;
     const newResult = this.computeResult();
@@ -41,7 +42,7 @@ class App extends Component {
     }
   }
 
-  computeResult() {
+  computeResult = () => {
     let { operator, firstNum, lastNum } = this.state;
     let computeResult;
 
@@ -81,14 +82,7 @@ class App extends Component {
         <input value={this.state.result} name="result" readOnly></input>
         <input value={this.state.firstNum} onChange={this.handleChange} name="firstNum" onClick={this.clear}></input>
         <input value={this.state.lastNum} onChange={this.handleChange} name="lastNum" onClick={this.clear}></input>
-        <div>
-          <button name="+" onClick={(e) => this.handleCompute(e)}>+</button>
-          <button name="-" onClick={(e) => this.handleCompute(e)}>-</button>
-          <button name="/" onClick={(e) => this.handleCompute(e)}>/</button>
-          <button name="*" onClick={(e) => this.handleCompute(e)}>*</button>
-          <button name="AC" onClick={() => this.clearAll()}>AC</button>
-          <button name="=" onClick={(e) => this.handleCompute(e)}>=</button>
-        </div>
+        <Calculation calculate={this.handleCompute} clearAll={this.clearAll} />
       </div>
     );
   }
