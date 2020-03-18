@@ -84,10 +84,24 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <input value={this.state.result} name="result" readOnly></input>
-        <input value={this.state.firstNum} onChange={this.handleChange} name="firstNum" onClick={this.clear}></input>
-        <input value={this.state.lastNum} onChange={this.handleChange} name="lastNum" onClick={this.clear}></input>
+      <div className="calculator">
+        <input
+          value={this.state.result}
+          name="result"
+          readOnly
+          className="result"></input>
+        <input
+          value={this.state.firstNum}
+          onChange={this.handleChange}
+          name="firstNum"
+          onClick={this.clear}
+          className="first-number"></input>
+        <input
+          value={this.state.lastNum}
+          onChange={this.handleChange}
+          name="lastNum"
+          onClick={this.clear}
+          className="last-number"></input>
         <Calculation calculate={this.handleCompute} clearAll={this.clearAll} />
       </div>
     );
