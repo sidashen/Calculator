@@ -23,7 +23,8 @@ class App extends Component {
   parseCompute = (e) => {
     const { result, operator } = this.state;
     const compute = e.target.name;
-    const newResult = this.computeResult();
+    const computeNum = this.computeResult();
+    const newResult = this.toFixed(computeNum);
     if (compute === '=') {
       return {
         operator: compute,
@@ -42,6 +43,10 @@ class App extends Component {
     }
   }
 
+  toFixed = (num) => {
+    return Math.round(num * 100) / 100;
+  }
+
   computeResult = () => {
     let { operator, firstNum, lastNum } = this.state;
     let computeResult;
@@ -55,6 +60,7 @@ class App extends Component {
     } else if (operator === '*') {
       computeResult = `${parseFloat(firstNum) * parseFloat(lastNum)}`;
     }
+
     return computeResult;
   }
 
