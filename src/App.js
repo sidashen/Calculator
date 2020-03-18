@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   computeResult = () => {
-    let { operator, firstNum, lastNum } = this.state;
+    const { operator, firstNum, lastNum } = this.state;
     let computeResult;
 
     if (operator === '+') {
@@ -60,7 +60,6 @@ class App extends Component {
     } else if (operator === '*') {
       computeResult = `${parseFloat(firstNum) * parseFloat(lastNum)}`;
     }
-
     return computeResult;
   }
 
