@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './styles/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      operator: null,
+      result: 0,
+      firstNum: 0,
+      lastNum: 0
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      result: e.target.value
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <input value={this.state.result} onChange={this.handleChange}></input>
+        <input value={this.state.firstNum} onChange={this.handleChange}></input>
+        <input value={this.state.lastNum} onChange={this.handleChange}></input>
+      </div>
+    );
+  }
 }
 
 export default App;
