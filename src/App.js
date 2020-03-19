@@ -23,18 +23,13 @@ class App extends Component {
   parseCompute = (e) => {
     const { result, operator, temp } = this.state;
     const compute = e.target.name;
-    const computeNum = this.computeResult();
-    const newResult = this.toFixed(computeNum);
+    const newResult = parseFloat(this.computeResult()).toFixed(2);
 
     return {
       operator: compute,
       result: newResult,
       temp: newResult
     }
-  }
-
-  toFixed = (num) => {
-    return Math.round(num * 100) / 100;
   }
 
   computeResult = () => {
