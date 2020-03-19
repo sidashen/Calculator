@@ -99,3 +99,19 @@
   grid-template-columns: 70px 70px;
   grid-template-rows: 70px 70px;
 }
+
+.operator:hover { background-color: #0975aa }
+
+.operator:active {
+  background-color: #0975aa;
+  box-shadow: 0 4px rgb(116, 112, 112);
+  transform: translateY(3px);
+}
+
+button {
+  outline: none;
+}
+
+input {
+  outline: none;
+}

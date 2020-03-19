@@ -9,9 +9,9 @@ class App extends Component {
       operator: null,
       result: 0,
       firstNum: 0,
-      lastNum: 0
+      lastNum: 0,
+      temp: 0
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = (event) => {
@@ -21,25 +21,15 @@ class App extends Component {
   }
 
   parseCompute = (e) => {
-    const { result, operator } = this.state;
+    const { result, operator, temp } = this.state;
     const compute = e.target.name;
     const computeNum = this.computeResult();
     const newResult = this.toFixed(computeNum);
-    if (compute === '=') {
-      return {
-        operator: compute,
-        result: newResult
-      };
-    } else if (compute === 'AC') {
-      return {
-        operator: compute,
-        result: 0
-      };
-    } else {
-      return {
-        operator: compute,
-        result: 0
-      }
+
+    return {
+      operator: compute,
+      result: newResult,
+      temp: newResult
     }
   }
 
@@ -48,7 +38,7 @@ class App extends Component {
   }
 
   computeResult = () => {
-    const { operator, firstNum, lastNum } = this.state;
+    const { operator, firstNum, lastNum, temp } = this.state;
     let computeResult;
 
     if (operator === '+') {
@@ -56,10 +46,16 @@ class App extends Component {
     } else if (operator === '-') {
       computeResult = `${parseFloat(firstNum) - parseFloat(lastNum)}`;
     } else if (operator === '/') {
-      computeResult = `${parseFloat(firstNum) / parseFloat(lastNum)}`;
+      if (lastNum === 0) {
+        computeResult = 0;
+      } else {
+        computeResult = `${parseFloat(firstNum) / parseFloat(lastNum)}`;
+      }
     } else if (operator === '*') {
       computeResult = `${parseFloat(firstNum) * parseFloat(lastNum)}`;
-    }
+    } else {
+      computeResult = temp;
+    };
     return computeResult;
   }
 
@@ -77,7 +73,8 @@ class App extends Component {
     this.setState({
       result: 0,
       firstNum: 0,
-      lastNum: 0
+      lastNum: 0,
+      temp: 0
     });
   }
 

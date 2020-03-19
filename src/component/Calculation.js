@@ -5,7 +5,7 @@ const Calculation = (props) => {
     <div>
       <div className="container">
         <button name="+" onClick={(e) => props.calculate(e)} className="computation">+</button>
-        <button name="*" onClick={(e) => props.calculate(e)} className="computation">*</button>
+        <button name="*" onClick={(e) => props.calculate(e)} className="computation">x</button>
         <button name="-" onClick={(e) => props.calculate(e)} className="computation">-</button>
         <button name="/" onClick={(e) => props.calculate(e)} className="computation">/</button>
       </div>
